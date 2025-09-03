@@ -1,0 +1,42 @@
+
+services:
+  backend1:
+    build: ./backend
+    container_name: backend1
+    ports:
+      - "8001:8000"  # optional, only for host testing
+    networks:
+      - app-network
+
+  backend2:
+    build: ./backend
+    container_name: backend2
+    ports:
+      - "8002:8000"  # optional
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:80"  # you can access frontend at localhost:3000
+    networks:
+      - app-network
+
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    ports:
+      - "80:80"  # HAProxy listens on host port 80
+    depends_on:
+      - backend1
+      - backend2
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
