@@ -1,6 +1,3 @@
-Perfect 👍 Let’s add a **sample `haproxy.cfg`** snippet to the README so that anyone reading it understands how the load balancing works. Here’s the updated doc:
-
----
 
 # HAProxy Load Balancer Demo
 
