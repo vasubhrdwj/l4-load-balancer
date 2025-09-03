@@ -11,6 +11,10 @@ We have:
 
 ---
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/798b6ad7-0053-4b40-87f7-ee1480dfd84a" />
+
+---
+
 ## Project Structure
 
 ```
